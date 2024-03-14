@@ -75,15 +75,17 @@ const ExtendedForecastPage: React.FC = () => {
   return (
     <Container>
       <h1>Extended Weather Page</h1>
-      <LocationsBar
-        onChange={handleLocationSelection}
-        currentLocation={location}
-      />
+      <Row className="py-2">
+        <LocationsBar
+          onChange={handleLocationSelection}
+          currentLocation={location}
+        />
+      </Row>
       <hr />
       {filteredList ? (
         <>
-          <Row>
-            <Col xs={4}>
+          <Row className="p-1">
+            <Col xs={6}>
               <InputGroup className="mb-3">
                 <FormControl
                   type="number"
@@ -102,7 +104,7 @@ const ExtendedForecastPage: React.FC = () => {
                 />
               </InputGroup>
             </Col>
-            <Col xs={4}>
+            <Col xs={6}>
               <InputGroup className="mb-3">
                 <FormControl
                   type="number"
@@ -122,13 +124,15 @@ const ExtendedForecastPage: React.FC = () => {
               </InputGroup>
             </Col>
           </Row>
-          <Carousel data-bs-theme="dark" fade>
-            {filteredList.map((item, idx) => (
-              <Carousel.Item interval={undefined}>
-                <WeatherCard weatherData={item} />
-              </Carousel.Item>
-            ))}
-          </Carousel>
+          <Row className="py-2">
+            <Carousel data-bs-theme="dark" fade>
+              {filteredList.map((item, idx) => (
+                <Carousel.Item interval={undefined}>
+                  <WeatherCard weatherData={item} />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Row>
         </>
       ) : (
         <h1>Please Select Location</h1>

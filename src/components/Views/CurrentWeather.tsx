@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import { Get } from "lib/ApiClient";
 
@@ -30,16 +30,20 @@ const CurrentWeatherPage: React.FC = () => {
   return (
     <Container>
       <h1>Current Weather Page</h1>
-      <LocationsBar
-        onChange={handleLocationSelection}
-        currentLocation={location}
-      />
+      <Row className="py-2">
+        <LocationsBar
+          onChange={handleLocationSelection}
+          currentLocation={location}
+        />
+      </Row>
       <hr />
-      {weather ? (
-        <WeatherCard weatherData={weather} isCurrent={true} />
-      ) : (
-        <h1>Please Select Location</h1>
-      )}
+      <Row className="py-2">
+        {weather ? (
+          <WeatherCard weatherData={weather} isCurrent={true} />
+        ) : (
+          <h1>Please Select Location</h1>
+        )}
+      </Row>
     </Container>
   );
 };

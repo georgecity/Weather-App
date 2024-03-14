@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, ButtonGroup, ToggleButton } from "react-bootstrap";
+import { ButtonGroup, ToggleButton, Row } from "react-bootstrap";
 
 const LocationsBar: React.FC<{
   onChange: (x: any) => void;
@@ -14,8 +14,8 @@ const LocationsBar: React.FC<{
   ];
 
   return (
-    <Container>
-      <ButtonGroup aria-label="Basic example">
+    <Row className="p-2">
+      <ButtonGroup aria-label="Basic example" className="p-2">
         {radios.map((radio, idx) => (
           <ToggleButton
             id={radio?.value}
@@ -33,7 +33,7 @@ const LocationsBar: React.FC<{
           </ToggleButton>
         ))}
       </ButtonGroup>
-    </Container>
+    </Row>
   );
 };
 

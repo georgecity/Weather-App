@@ -6,12 +6,12 @@ const WeatherNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
       <Navbar.Brand href="/">
-        <span className="d-block d-sm-none">WeatherApp</span>
-        <span className="d-none d-sm-block">My Weather App</span>
+        <span className="d-block d-sm-none px-3">WeatherApp</span>
+        <span className="d-none d-sm-block px-3">My Weather App</span>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="turk-navbar" />
-      <Navbar.Collapse id="turk-navbar">
-        <Nav className="mr-auto">
+      <Navbar.Toggle />
+      <Navbar.Collapse>
+        <Nav className="mr-auto w-100">
           <Nav.Link className="mx-1" href="/">
             Current
           </Nav.Link>

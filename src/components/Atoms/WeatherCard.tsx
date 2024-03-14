@@ -17,11 +17,13 @@ const WeatherCard: React.FC<{
   }) => {
     return (
       <Col className="py-2">
-        <Row>
-          <Card.Text>{title}</Card.Text>
+        <Row className="py-2">
+          <Card.Text style={{ fontSize: "1rem", fontWeight: "bold" }}>
+            {title}
+          </Card.Text>
         </Row>
-        <Row>
-          <Card.Text>{value}</Card.Text>
+        <Row className="py-2">
+          <Card.Text style={{ fontSize: "1.2rem" }}>{value}</Card.Text>
         </Row>
       </Col>
     );
@@ -29,15 +31,15 @@ const WeatherCard: React.FC<{
 
   const RowComponent: React.FC<{ value: any }> = ({ value }) => {
     return (
-      <Row>
-        <Card.Text>{value}</Card.Text>
+      <Row className="py-2">
+        <Card.Text style={{ fontSize: "1.2rem" }}>{value}</Card.Text>
       </Row>
     );
   };
 
   const ExtendedTemp = () => {
     return (
-      <Row>
+      <Row className="py-2">
         <ColComponent
           title="Min temperature"
           value={`${Math.ceil(parseFloat(weatherData?.["min_temp"]))} °C`}
@@ -72,7 +74,7 @@ const WeatherCard: React.FC<{
   return (
     <Card className="my-3" style={{ width: "80%", margin: "auto" }}>
       <Col>
-        <Row>
+        <Row className="py-2">
           {image && (
             <Card.Img
               variant="top"
